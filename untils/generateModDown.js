@@ -32,7 +32,6 @@ ${data.tests}
 ## Questions
 Link to email at ${data.email} and github profile [here](${data.github}).
  `;
-
 }
 
 module.export = modReadme;

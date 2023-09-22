@@ -44,5 +44,23 @@ const questions = [
         name: 'email',
         message: 'Enter email address',
     },
-]
+];
 
+function writeToFile (fileName, data) {
+fs.writeFile(fileName,data,
+(err) => {
+    if (err) {
+        console.log(err);
+    }else {
+        console.log('readme had been created');
+    }
+});
+
+}function init() {
+    inquirer.prompt(questions).then((answers) => {
+        const modDown = generateREADME(answers);
+        writeToFile('ModMe.md',modDown)
+    })
+}
+
+init();

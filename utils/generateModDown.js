@@ -1,4 +1,4 @@
-function modReadme (data) {
+function markDownData (data) {
 return `
 # ${data.title}
 
@@ -34,4 +34,4 @@ Link to email at ${data.email} and github profile [here](${data.github}).
  `;
 }
 
-module.export = modReadme;
+module.exports = markDownData;

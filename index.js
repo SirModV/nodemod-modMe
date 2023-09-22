@@ -22,7 +22,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Chosse a license for you project:',
-        chocies: ['None', 'MIT']
+        choices: ['None', 'MIT']
     },
     {
         type: 'input',
@@ -46,21 +46,21 @@ const questions = [
     },
 ];
 
-function writeToFile (fileName, data) {
-fs.writeFile(fileName,data,
-(err) => {
+function writeToFile(fileName, data) {
+fs.writeFile(fileName,data, (err) => {
     if (err) {
         console.log(err);
-    }else {
+    } else {
         console.log('readme had been created');
     }
-});
+    });
 
-}function init() {
+}
+function init() {
     inquirer.prompt(questions).then((answers) => {
         const modDown = generateREADME(answers);
-        writeToFile('ModMe.md',modDown)
-    })
+        writeToFile('ModMe.md',modDown);
+    });
 }
 
 init();
